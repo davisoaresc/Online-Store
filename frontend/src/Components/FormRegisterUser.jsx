@@ -9,12 +9,12 @@ export function FormRegisterUser() {
       </Form.Group>
 
       <Form.Group className="mb-3" controlId="formBasicPrice">
-          <Form.Label>Senha</Form.Label>
+          <Form.Label>Email</Form.Label>
           <Form.Control type="password"/>
       </Form.Group>
 
       <Form.Group className="mb-3" >
-          <Form.Label>Url da imagem</Form.Label>
+          <Form.Label>Senha</Form.Label>
           <Form.Control type="text"/>
       </Form.Group>
     </Form>
