@@ -19,4 +19,5 @@ export function FormRegisterProduct() {
       </Form.Group>
     </Form>
   )
+  
 }
