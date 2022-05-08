@@ -1,11 +1,11 @@
-require('dotenv').config();
+import dotenv from "dotenv";
+import bodyParser from "body-parser";
+import express from "express";
 
-const bodyParser = require('body-parser');
+import middlewares from "./middleware/index.js";
+import routes from "./routes/index.js";
 
-const express = require('express');
-
-const middlewares = require('./middleware');
-const routes = require('./routes');
+dotenv.config();
 
 const PORT = 3002;
 
@@ -13,7 +13,9 @@ const app = express();
 
 app.use(bodyParser.json());
 
-app.use('/user', routes.userRouter);
+app.use("/user", routes.userRouter);
+app.use("/product", routes.productRouter);
+app.use("/login", routes.loginRouter);
 
 app.use(middlewares.errorHandle);
 

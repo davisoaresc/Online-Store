@@ -1,4 +1,4 @@
-const Product= (sequelize, DataTypes) => {
+const Product = (sequelize, DataTypes) => {
   const productCreate = sequelize.define('Product', { 
     id: {
       primaryKey: true,
@@ -28,4 +28,4 @@ const Product= (sequelize, DataTypes) => {
     return productCreate;
 };
 
-module.exports = Product;
+export default Product;

@@ -1,5 +1,10 @@
-const { createUser } = require('./User');
+import { createUser } from "./user.js";
+import { createProduct, listProducts } from "./product.js";
+import { login } from "./login.js";
 
-module.exports = {
+export default {
   createUser,
-}
+  createProduct,
+  listProducts,
+  login,
+};

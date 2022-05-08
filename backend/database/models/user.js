@@ -28,4 +28,4 @@ const User = (sequelize, DataTypes) => {
       return userCreate;
   };
   
-  module.exports = User;
+  export default User;
