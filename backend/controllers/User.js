@@ -1,6 +1,6 @@
-import User from "../database/models/user.js";
+const { User } =  require('../database/models');
 
-export const createUser = async (req, res, next) => {
+const createUser = async (req, res, next) => {
   try {
     const { usuario, email, senha } = req.body;
 
@@ -19,4 +19,7 @@ export const createUser = async (req, res, next) => {
   } catch (err) {
     next(err);
   }
-};
+}
+
+module.exports = createUser;
+

@@ -1,6 +1,7 @@
-import express from 'express';
-import controllers from '../controllers/index.js';
-import middlewares from '../middleware/index.js';
+const express = require('express');
+
+const controllers = require('../controllers');
+const middlewares = require('../middlewares'); 
 
 const router = express.Router()
 
@@ -13,4 +14,4 @@ router.get('/',
   controllers.listProducts,
 )
 
-export default router;
+module.exports = router;

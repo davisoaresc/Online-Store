@@ -1,7 +1,7 @@
-import express from 'express';
+const express = require('express');
 
-import controllers from '../controllers/index.js';
-import middlewares from '../middleware/index.js';
+const controllers = require('../controllers');
+const middlewares = require('../middlewares'); 
 
 const router = express.Router()
 
@@ -10,4 +10,4 @@ router.post('/',
   controllers.login,
 )
 
-export default router;
+module.exports = router;

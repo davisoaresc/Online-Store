@@ -1,9 +1,9 @@
-import userRouter from './userRoutes.js';
-import productRouter from './productRoutes.js';
-import loginRouter from './loginRoutes.js';
+const userRouter  = require('./userRoutes');
+const productRouter = require('./productRoutes');
+const loginRouter = require('./loginRoutes');
 
-export default {
+module.exports = {
   userRouter,
   productRouter,
   loginRouter,
-}
+};

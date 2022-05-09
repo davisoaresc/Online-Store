@@ -1,11 +1,10 @@
-import dotenv from "dotenv";
-import bodyParser from "body-parser";
-import express from "express";
+require ('dotenv').config();
 
-import middlewares from "./middleware/index.js";
-import routes from "./routes/index.js";
+const bodyParser = require('body-parser');
+const express = require('express');
 
-dotenv.config();
+const middlewares = require('./middlewares');
+const routes = require('./routes');
 
 const PORT = 3002;
 

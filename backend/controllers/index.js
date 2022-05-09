@@ -1,8 +1,8 @@
-import { createUser } from "./user.js";
-import { createProduct, listProducts } from "./product.js";
-import { login } from "./login.js";
+const createUser = require('./user');
+const { createProduct, listProducts } = require('./product');
+const login  = require('./login');
 
-export default {
+module.exports = {
   createUser,
   createProduct,
   listProducts,

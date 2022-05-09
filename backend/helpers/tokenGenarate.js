@@ -1,6 +1,6 @@
-import jwt from 'jsonwebtoken';
+const jwt = require('jsonwebtoken');
 
-export default (data = {}) => { 
+module.exports = (data = {}) => { 
   const jwtConfig = {
     expiresIn: '7d',
     algorithm: 'HS256',

@@ -1,6 +1,6 @@
-import tokenGenerate from "../helpers/tokenGenarate.js";
+const tokenGenerate = require('../helpers/tokenGenarate');
 
-export const login = async (req, res, next) => {
+module.exports = async (req, res, next) => {
   try {
     const { usuario, senha } = req.body;
     const tokenCreated = tokenGenerate({ usuario, senha });
@@ -8,5 +8,7 @@ export const login = async (req, res, next) => {
     return res.status(201).json({ token: tokenCreated });
   } catch (err) {
     next(err);
+    return null;
   }
 };
+

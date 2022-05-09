@@ -1,6 +1,6 @@
-import Product from "../database/models/product.js";
+const { Product } = require('../database/models');
 
-export const createProduct = async (req, res, next) => {
+const createProduct = async (req, res, next) => {
   try {
     const { nome, preco, imagem } = req.body;
 
@@ -16,7 +16,7 @@ export const createProduct = async (req, res, next) => {
   }
 };
 
-export const listProducts = async (req, res, next) => {
+const listProducts = async (req, res, next) => {
   try {
     const products = await Product.findAll();
     return res.status(200).json(products);
@@ -24,3 +24,8 @@ export const listProducts = async (req, res, next) => {
     next(err);
   }
 };
+
+module.exports = {
+  createProduct,
+  listProducts,
+}

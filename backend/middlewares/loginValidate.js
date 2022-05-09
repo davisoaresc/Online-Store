@@ -1,6 +1,6 @@
-import User from "../database/models/user.js";
+const { User } = require('../database/models');
 
-export default async (req, res, next) => {
+module.exports = async (req, res, next) => {
   const { usuario, senha } = req.body;
 
   if (usuario === "") {
