@@ -21,5 +21,22 @@ const createUser = async (req, res, next) => {
   }
 }
 
-module.exports = createUser;
+const listUsersByUserName = async (req, res, next) => {
+  try {
+    const { usuario } = req.params;
+    console.log(usuario);
+    const findUser = await User.findOne({ where: { usuario } });
+    if(!findUser) {
+      return res.status(404).json({message: "Usuário não encontrado"})
+    }
+    return res.status(200).json(findUser);
+  } catch (err) {
+    next(err);
+  }
+};
+
+module.exports = {
+  createUser,
+  listUsersByUserName,
+};
 

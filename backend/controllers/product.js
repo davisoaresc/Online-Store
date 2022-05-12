@@ -2,12 +2,13 @@ const { Product } = require('../database/models');
 
 const createProduct = async (req, res, next) => {
   try {
-    const { nome, preco, imagem } = req.body;
+    const { nome, preco, imagem, pontos } = req.body;
 
     const productCreated = await Product.create({
       nome,
       preco,
       imagem,
+      pontos,
     });
 
     return res.status(201).json({ productCreated });

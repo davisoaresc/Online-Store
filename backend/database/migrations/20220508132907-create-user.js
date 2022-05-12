@@ -18,6 +18,12 @@ module.exports = {
       senha: {
         type: Sequelize.STRING,
       },
+      pontos: {
+        type: Sequelize.INTEGER,
+      },
+      moedas: {
+        type: Sequelize.INTEGER,
+      },
     });
   },
   async down(queryInterface) {

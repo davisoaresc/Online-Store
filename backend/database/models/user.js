@@ -19,6 +19,14 @@ const User = (sequelize, DataTypes) => {
         allowNull: false,
         type: DataTypes.STRING,
       },
+      pontos: {
+        allowNull: true,
+        type: DataTypes.INTEGER,
+      },
+      moedas: {
+        allowNull: true,
+        type: DataTypes.INTEGER,
+      },
     },
 
     {

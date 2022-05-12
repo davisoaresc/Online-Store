@@ -18,6 +18,9 @@ module.exports = {
       imagem: {
         type: Sequelize.STRING,
       },
+      pontos: {
+        type: Sequelize.INTEGER,
+      },
     });
   },
   async down(queryInterface) {
