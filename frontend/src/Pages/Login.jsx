@@ -1,16 +1,40 @@
-import { useContext } from 'react';
+import { useContext, useState } from 'react';
 import { Button, Form } from 'react-bootstrap';
-import { Link } from 'react-router-dom';
+import { useNavigate } from 'react-router-dom';
 import { ModalCreateUser } from '../Components/ModalCreateUser';
 import Context from '../Context/Context';
+import { loginApi } from '../helpers/fetchApi';
 
 import '../Styles/Login.css'
 
 export function Login() {
+  let navigate = useNavigate();
+  const [password, setPassword] = useState('');
+  const { user, setUser, setToken } = useContext(Context);
 
-  const { user, setUser } = useContext(Context);
+  
 
-  return (
+  async function handleSubmit () {
+    const api = await loginApi(user, password);
+    const data = await api.json();
+    const userData = {
+      userName: user, 
+      token: data.token,
+    }
+    if (!data.token) {
+      return alert(`Erro ${api.status}: ${data.message}`)
+    }
+    localStorage.setItem('user', JSON.stringify(userData));
+    setToken(data.token);
+  
+    alert('Login efetuado com sucesso');
+
+    navigate('/home')
+    
+    return
+  }
+
+  return (  
     <div className="login-forms">
       <Form className="form">
         <div>
@@ -25,13 +49,21 @@ export function Login() {
 
           <Form.Group className="mb-4" controlId="formBasicPassword">
               <Form.Label>Senha</Form.Label>
-              <Form.Control type="text"/>
+              <Form.Control
+                type="password"
+                onChange = { ({target}) => setPassword(target.value)}
+              />
           </Form.Group>
           <div className="d-grid gap-2">
             <ModalCreateUser />
-            <Link to="/">
-              <Button className="button-login"  type="submit" variant="primary">Entrar</Button>
-            </Link>        
+            <Button 
+              className="button-login"
+              type="button"
+              variant="primary"
+              onClick={handleSubmit}
+            >
+                Entrar
+              </Button>
           </div>
         </div>
       </Form>
