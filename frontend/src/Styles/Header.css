@@ -25,13 +25,9 @@
   display: flex;
   justify-content: flex-end;
   flex-direction: row;
-  margin-right: 50px;
+  margin-right: 80px;
   text-align: right;
   width: 100%;
-}
-
-.user-container span {
-  margin-right: 20px;
 }
 
 .button-add {
@@ -40,13 +36,13 @@
 	padding: 0;
 	font: inherit;
 	cursor: pointer;
-	/* outline: inherit; */
   margin-right: 30px;
   color: white;
 }
 
 .user {
   margin-top: 10px;
+  margin-right: 15px;
 }
 
 .modal-content {
@@ -59,6 +55,28 @@
   opacity: 0.9;
 }
 
-.react-icons-add {
-  color: #ffffff;
+.btn-add-product {
+  margin-right: 20px;
+}
+
+.react-icons {
+  fill: white;
+}
+
+.navbar {
+  background-color: transparent !important;
+  color: white;
+}
+
+.btn-list-products {
+  background: none;
+	border: none;
+	padding: 0;
+	font: inherit;
+	cursor: pointer;
+  color: white
+}
+
+.container-user-details p {
+  margin-left: 5px
 }
