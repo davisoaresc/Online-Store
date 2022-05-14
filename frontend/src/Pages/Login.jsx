@@ -26,8 +26,6 @@ export function Login() {
     }
     localStorage.setItem('user', JSON.stringify(userData));
     setToken(data.token);
-  
-    alert('Login efetuado com sucesso');
 
     navigate('/home')
     

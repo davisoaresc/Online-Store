@@ -3,7 +3,6 @@
   -webkit-backdrop-filter: blur(16px) saturate(180%);
   background-color: rgba(17, 25, 40, 0.75);
   border: 1px solid rgba(255, 255, 255, 0.125);
-  color: rgb(2, 36, 78);
   display: flex;
   left: 0;
   top: 0;
@@ -80,3 +79,10 @@
 .container-user-details p {
   margin-left: 5px
 }
+
+.form-floating>.form-select {
+  padding-top: 0;
+  padding-bottom: 0;
+  height: 45px;
+}
+
