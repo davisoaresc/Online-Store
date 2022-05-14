@@ -1,4 +1,4 @@
-const { User } = require('../database/models');
+const { User } = require('../models');
 
 module.exports = async (req, res, next) => {
   const { usuario, senha } = req.body;
@@ -9,16 +9,8 @@ module.exports = async (req, res, next) => {
       .json({ message: 'O campo "Usuario" precisa ser preenchido' });
   }
 
-  if (!usuario) {
-    return res.status(400).json({ message: '"Usuario" é necessário' });
-  }
-
   if (senha === "") {
     return res.status(400).json({ message: '"senha" precisa ser preenchido' });
-  }
-
-  if (!senha) {
-    return res.status(400).json({ message: '"password" is required' });
   }
 
   const findUser = await User.findOne({ where: { usuario } });
