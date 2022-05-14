@@ -3,6 +3,7 @@ import Button from 'react-bootstrap/Button';
 import { useContext, useState } from "react";
 import Context from "../Context/Context";
 import { createProductApi } from "../helpers/fetchApi";
+import { Plus } from "phosphor-react";
 
 export function ModalAddProduct() {
   const [show, setShow] = useState(false);
@@ -35,8 +36,8 @@ export function ModalAddProduct() {
       <NavDropdown.Item 
         href="#action/3.1"
         onClick={handleShow}
-      >
-        Adicionar Produto
+      ><Plus size={20} />
+           Cadastrar Produto
       </NavDropdown.Item>
 
       <Modal show={show} onHide={handleClose}>

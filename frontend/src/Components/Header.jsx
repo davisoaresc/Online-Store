@@ -2,7 +2,7 @@ import { useEffect, useState } from 'react';
 import { SignOut, ShoppingBagOpen, DesktopTower } from "phosphor-react";
 import { Link } from 'react-router-dom';
 import '../Styles/Header.css';
-import { WidgetUserDetails } from './WidgetUserDetails';
+import { DropdownUserDetails } from './DropdownUserDetails';
 import { DropDownListProdusct } from './DropdownListProduct';
 import { getUserByUsername } from '../Helpers/fetchApi';
 
@@ -39,7 +39,7 @@ export function Header() {
 
         { user === "admin"  && <DropDownListProdusct/> }
 
-        <WidgetUserDetails
+        <DropdownUserDetails
           user={ user }
           email={email}
           pontos={pontos}

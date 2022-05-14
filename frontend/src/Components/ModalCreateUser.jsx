@@ -21,8 +21,8 @@ export function ModalCreateUser () {
     try {
       const createUser = await createUserApi(user, email, password)  
       const data = await createUser.json();
-      handleClose()
-      alert('Usuário criado com sucesso');
+      alert(`${createUser.status}: ${data.message}`);
+      handleClose();
     }
     catch(err) {
       console.log(err);
