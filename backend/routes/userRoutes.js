@@ -13,4 +13,12 @@ router.get('/:usuario',
   controllers.listUsersByUserName,
 )
 
+router.put('/:usuario',
+  controllers.updateUserCoins,
+)
+
+router.put('/:usuario/moedas',
+  controllers.userBuyingCoins,
+)
+
 module.exports = router;

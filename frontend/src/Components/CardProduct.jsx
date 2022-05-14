@@ -1,9 +1,18 @@
 import { Button, Card, ListGroup, ListGroupItem } from "react-bootstrap";
-import { ShoppingCartSimple } from  "phosphor-react"
+import { Coins, CurrencyEth, ShoppingCartSimple } from  "phosphor-react"
+import { updateUserCoinsPts } from "../Helpers/fetchApi";
 
 export function CardProduct(props) {
   const PONTOS= 0;
-  const {image, name, price, pontos} = props;
+  const {image, name, moedas, pontos} = props;
+
+  async function handleUserPurchase() {
+    const localStorageItem = JSON.parse(localStorage.getItem('user'));
+    const api = await updateUserCoinsPts(localStorageItem.userName, pontos, moedas);
+    console.log(api);
+    const data = await api.json();
+    return alert(`Status ${api.status}: ${data.message}`)
+  }
 
   return(
     <Card style={{ width: '13rem' }}>
@@ -16,11 +25,17 @@ export function CardProduct(props) {
           <list-group-item>
           <Card.Title>{name}</Card.Title>
           </list-group-item>
-          <ListGroupItem>{`$${price},00`}</ListGroupItem>
+          <ListGroupItem><Coins size={22} />{`  ${moedas},00`}</ListGroupItem>
           <ListGroupItem>
-            {`Bônus da compra: ${pontos === null ? PONTOS : pontos} pontos`}
+            {`Bônus da compra: `}
+            <CurrencyEth size={22} />
+            {`  ${pontos === null ? PONTOS : pontos}`}
           </ListGroupItem>
-          <Button variant="outline-primary">
+          <Button
+            type="button"
+            onClick={handleUserPurchase}
+            variant="outline-primary"
+          >
             <ShoppingCartSimple size={25} />      Comprar
           </Button>
         </ListGroup>
