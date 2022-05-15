@@ -66,4 +66,19 @@ Start the tests
 ```
 npm run test
 ```
+## Author
+
+<table>
+  <tr>
+    <td align="center">
+      <a href="https://www.linkedin.com/in/davi-soares-coura/" target="_blank" rel="noopener noreferrer">
+        <img src="https://media-exp1.licdn.com/dms/image/C4E03AQE-3zAXIVd3tw/profile-displayphoto-shrink_800_800/0/1633029711494?e=1658361600&v=beta&t=_AWbgG4037Bz6FOuIjnxSGL5ukkrivc7OsGIo6NuUCw" width="100px;" alt="Foto do Davi Soares"/><br>
+        <sub>
+          <b>Davi Soares Coura</b>
+        </sub>
+      </a>
+    </td>
+  </tr>
+</table>
+
 
