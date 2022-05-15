@@ -2,7 +2,7 @@ import { Form, Modal, NavDropdown } from "react-bootstrap";
 import Button from 'react-bootstrap/Button';
 import { useContext, useState } from "react";
 import Context from "../Context/Context";
-import { createProductApi } from "../helpers/fetchApi";
+import { createProductApi } from "../Helpers/fetchApi";
 import { Plus } from "phosphor-react";
 
 export function ModalAddProduct() {
