@@ -18,6 +18,7 @@ export async function loginApi(usuario, senha) {
       "Content-Type": "application/json",
     },
     body: JSON.stringify({ usuario, senha })
+    
   });
 }
 
